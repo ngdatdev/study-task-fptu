@@ -1,0 +1,4 @@
+Em;Sai gon;4000
+Dat;Quang Binh;1000
+Huy;Quang Nam;2000
+Loi;Da Nang;2200.22

@@ -1,0 +1,5 @@
+Apple,Qua tao
+Cat,Con meo
+Ruler,Cai thuoc
+Dog,Con cho
+Tiger,Con ho
