@@ -30,9 +30,6 @@ public class TaskList {
             throw new IllegalArgumentException("Invalid Task Type ID. Please enter a value between 1 and 4.");
         }
 
-//        SimpleDateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy");
-//        Date d = dateFormat.parse(date);
-
         if (from >= to || from < 8.0 || to > 17.5) {
             throw new IllegalArgumentException("Invalid Plan From/To time. Plan From must be less than Plan To and within 8:00 AM to 5:30 PM.");
         }
