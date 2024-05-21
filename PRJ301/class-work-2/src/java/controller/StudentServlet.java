@@ -40,10 +40,10 @@ public class StudentServlet extends HttpServlet {
             s.setDob(LocalDate.now());
             students.add(s);
         }
-        request.setAttribute("students", students);
+        request.getSession().setAttribute("students", students);
         RequestDispatcher rd = request.getRequestDispatcher("student.jsp");
         rd.forward(request, response);
-        
+
     }
 
     @Override

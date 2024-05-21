@@ -14,38 +14,38 @@
             <input type="submit" value="Generate">
         </form>
 
-
         <%
-        Object studentsObj = request.getAttribute("students");
+        Object studentsObj = request.getSession().getAttribute("students");
         List<Student> students = null;
         if (studentsObj instanceof List) {
             students = (List<Student>) studentsObj;
         }
         if (students != null) {
         %>
-         <form action="UpdateStudentServlet" method="POST">
-            <table border="1">
-                <tr>
-                    <th>ID</th>
-                    <th>Name</th>
-                    <th>Gender</th>
-                    <th>Date of Birth</th>
-                    <th>Action</th>
-                </tr>
-                <% for (Student student : students) { %>
-                <tr>
-                    <td><%= student.getId() %></td>
-                    <td><%= student.getName() %></td>
-                    <td><%= student.isGender() ? "Male" : "Female" %></td>
-                    <td><%= student.getDob() %></td>
-                    <td>
-                        <button type="submit" name="updateId" value="<%= student.getId() %>">Update</button>
-                    </td>
-                </tr>
-                <% } %>
-            </table>
-            <input type="hidden" name="students" value="<%= students %>">
-        </form>
+        <table border="1">
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Gender</th>
+                <th>Date of Birth</th>
+                <th>Action</th>
+            </tr>
+            <% for (Student student : students) { %>
+            <tr>
+            <form action="UpdateStudentServlet" method="POST">
+                <td><%= student.getId() %></td>
+                <td><input type="text" name="name" value="<%= student.getName() %>"></td>
+                <td><input type="text" name="gender" value="<%= student.isGender() ? "Male" : "Female" %>"></td>
+                <td><input type="text" name="dob" value="<%= student.getDob() %>"></td>
+                <td>
+                    <input type="hidden" name="id" value="<%= student.getId() %>">
+                    <input type="submit" value="Update">
+                </td>
+            </form>
+        </tr>
+        <% } %>
+    </table>
     <% } %>
+
 </body>
 </html>
