@@ -18,7 +18,7 @@ public class Java_JDBC {
         String DBName ="School";
         String driverClass = "com.microsoft.sqlserver.jdbc.SQLServerDriver";
         
-        String dbURL = "jdbc:sqlserver://LAPTOP-7M53ESA2;databaseName=School;encrypt=false;trustServerCertificate=false;loginTimeout=30"; 
+        String dbURL = "jdbc:sqlserver://LAPTOP-7M53ESA2;databaseName=PRJ301_DE180922;encrypt=false;trustServerCertificate=false;loginTimeout=30"; 
         //String dbURL = "jdbc:sqlserver://DESKTOP-UEDQ7P6\\HOATNTT;databaseName=School;encrypt=false;trustServerCertificate=false;loginTimeout=30";         
         try{
             Class.forName(driverClass);
@@ -37,9 +37,9 @@ public class Java_JDBC {
         ResultSet rs = null;
         try{ 
             stmt = con.createStatement();
-            rs= stmt.executeQuery("Select Id, Name from Student " );
+            rs= stmt.executeQuery("Select * from Teacher where name = "  + "\'Nguyen Phong Son\'" );
             while(rs.next()){
-                System.out.println (rs.getInt("Id") + " Ten SV: " + rs.getString("Name"));
+                System.out.println (" Ten SV: " + rs.getString("Name"));
             }
             
 	} catch(Exception e) {
