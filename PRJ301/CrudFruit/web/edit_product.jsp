@@ -12,11 +12,11 @@
     <div class="container">
         <h2>Edit Product</h2>
         <% String productId = request.getParameter("id"); %>
-        <form action="ProductServlet" method="post">
-            <input type="hidden" type="number" name="id" value="${productId}}">
+         <form action="ProductServlet?action=UPDATE" method="post">
+            <input type="hidden" name="id" value="${param.id}">
             <div class="form-group">
                 <label for="name">Product Name:</label>
-                <input type="text" class="form-control" id="name" name="name">
+                <input type="text" class="form-control" id="name" name="name" value="${param.name}">
             </div>
             <div class="form-group">
                 <label for="description">Description:</label>
@@ -24,7 +24,7 @@
             </div>
             <div class="form-group">
                 <label for="price">Price:</label>
-                <input type="text" class="form-control" id="price" name="price">
+                <input type="text" class="form-control" id="price" name="price" value="${param.price}">
             </div>
             <button type="submit" class="btn btn-primary">Update Product</button>
             <a href="<%= request.getContextPath() %>/index.jsp" class="btn btn-secondary">Cancel</a>
